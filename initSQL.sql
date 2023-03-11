@@ -76,7 +76,8 @@ DROP TABLE IF EXISTS cultivo;
 
 create table
     coralData.cultivo (
-        nombre VARCHAR(25) primary key,
+        id BIGINT auto_increment primary key,
+        nombre VARCHAR(25) ,
         dias_crecimiento int not null,
         estacion enum ('primavera', 'verano', 'otoño', 'invierno') not null
     ) engine = InnoDB;
@@ -86,7 +87,8 @@ DROP TABLE IF EXISTS fruta;
 
 create table
     coralData.fruta (
-        nombre VARCHAR(25) primary key,
+        id BIGINT auto_increment primary key,
+        nombre VARCHAR(25),
         dias_crecimiento int not null,
         estacion enum ('primavera', 'verano', 'otoño', 'invierno') not null,
         tipo varchar(255) not null
@@ -97,7 +99,8 @@ DROP TABLE IF EXISTS personaje;
 
 create table
     coralData.personaje (
-        nombre VARCHAR(25) primary key,
+        id BIGINT auto_increment primary key,
+        nombre VARCHAR(25),
         dia_cumpleaños int not null,
         estacion_cumpleaños enum ('primavera', 'verano', 'otoño', 'invierno') not null
     ) engine = InnoDB;

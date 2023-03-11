@@ -1,10 +1,10 @@
 package pfg.coral_api.controller;
 
 import lombok.RequiredArgsConstructor;
+import pfg.coral_api.errors.CultivoNotFoundException;
 import pfg.coral_api.model.Cultivo;
 import pfg.coral_api.repos.CultivoRepository;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,9 +38,9 @@ public class CultivoController {
      * @return Cultivo | Error 404
      */
     @GetMapping("/cultivo/{id}")
-    public Cultivo getEquipoById(@PathVariable Long id) {
+    public Cultivo getCultivoById(@PathVariable Long id) {
         return repositorioCultivos.findById(id)
-                .orElseThrow(() -> new EquipoNotFoundException(id));
+                .orElseThrow(() -> new CultivoNotFoundException(id));
     }
 
 }
